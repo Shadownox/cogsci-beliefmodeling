@@ -1,4 +1,3 @@
-# cogsci-beliefmodeling
 CogSci Belief Modeling
 ======================
 
