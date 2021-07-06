@@ -1,0 +1,34 @@
+{
+    "type": "coverage",
+    "data.test": "../data/Trippas2018.csv",
+    "models": [
+		{"filename": "../models/portfolio.py", "override_name": "rat-Portfolio", "args": {"optimize_rating": true}},
+		{"filename": "../models/portfolio.py", "override_name": "ver-Portfolio", "args": {"optimize_rating": false}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "ver-Portfolio-PHM", "args": {"method": "phm", "optimize_rating": false}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "ver-Portfolio-FOL", "args": {"method": "fol", "optimize_rating": false}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "ver-Portfolio-mReasoner", "args": {"method": "mReasoner", "optimize_rating": false}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "rat-Portfolio-PHM", "args": {"method": "phm", "optimize_rating": true}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "rat-Portfolio-FOL", "args": {"method": "fol", "optimize_rating": true}},
+		{"filename": "../models/portfolio_belief.py", "override_name": "rat-Portfolio-mReasoner", "args": {"method": "mReasoner", "optimize_rating": true}},
+        {"filename": "../models/NoBeliefModel.py", "override_name": "PHM", "args": {"method": "phm"}},
+        {"filename": "../models/NoBeliefModel.py", "override_name": "FOL", "args": {"method": "fol"}},
+        {"filename": "../models/NoBeliefModel.py", "override_name": "mReasoner", "args": {"method": "mReasoner"}},
+        {"filename": "../models/MisinterpretedNecessity.py", "override_name": "MN-PHM", "args": {"method": "phm"}},
+        {"filename": "../models/MisinterpretedNecessity.py", "override_name": "MN-FOL", "args": {"method": "fol"}},
+        {"filename": "../models/MisinterpretedNecessity.py", "override_name": "MN-mReasoner", "args": {"method": "mReasoner"}},
+        {"filename": "../models/SelectiveScrutinyModel.py", "override_name": "SS-PHM", "args": {"method": "phm"}},
+        {"filename": "../models/SelectiveScrutinyModel.py", "override_name": "SS-FOL", "args": {"method": "fol"}},
+        {"filename": "../models/SelectiveScrutinyModel.py", "override_name": "SS-mReasoner", "args": {"method": "mReasoner"}},
+		"../models/UserMedian.py",
+        "../models/Random.py"
+    ],
+    "aux_evaluations": [{
+        "data_column": "rating",
+        "comparator": "absdiff",
+        "task_encoders": {
+            "syllogistic-belief": "%ccobra%/syllogistic/task_encoder_syl.py"
+        },
+        "prediction_fn_name": "predict_rating",
+        "adaption_fn_name": "adapt_rating"
+    }]
+}
